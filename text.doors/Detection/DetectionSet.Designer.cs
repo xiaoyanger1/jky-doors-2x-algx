@@ -534,7 +534,6 @@
             this.cb_JianYanXiangMu.Items.AddRange(new object[] {
             "气密性能检测",
             "水密性能检测",
-            "抗风压性能检测",
             "气密性能及水密性能检测"});
             this.cb_JianYanXiangMu.Location = new System.Drawing.Point(444, 105);
             this.cb_JianYanXiangMu.Name = "cb_JianYanXiangMu";
