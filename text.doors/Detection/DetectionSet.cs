@@ -26,9 +26,12 @@ namespace text.doors.Detection
         private string _tempCode = "";
         private string _tempTong = "";
 
+        private TCPClient tcpClient;
+
         public DetectionSet() { }
-        public DetectionSet(double temperature, double temppressure, string tempCode, string tempTong)
+        public DetectionSet(TCPClient tcpClient, double temperature, double temppressure, string tempCode, string tempTong)
         {
+            this.tcpClient = tcpClient;
             this._temperature = temperature;
             this._temppressure = temppressure;
             this._tempCode = tempCode;
@@ -295,11 +298,19 @@ namespace text.doors.Detection
             this.btn_select.Enabled = false;
             this.btn_delete.Enabled = false;
             this.btn_Ok.Enabled = true;
-            if (_temppressure != 0 && _temperature != 0)
+
+            var IsSeccess = false;
+            var temppressure = tcpClient.GetDQYLXS(ref IsSeccess);
+            if (IsSeccess)
             {
-                btn_DaQiYaLi.Text = _temppressure.ToString();
-                btn_DangQianWenDu.Text = _temperature.ToString();
+                btn_DaQiYaLi.Text = temppressure.ToString();
             }
+            var temperature = tcpClient.GetWDXS(ref IsSeccess);
+            if (IsSeccess)
+            {
+                btn_DangQianWenDu.Text = temperature.ToString();
+            }
+
             BindDangQianDangHao();
         }
 

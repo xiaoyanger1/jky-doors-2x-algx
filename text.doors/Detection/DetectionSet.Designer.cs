@@ -475,8 +475,8 @@
             // 
             this.cb_XiangQianFangShi.FormattingEnabled = true;
             this.cb_XiangQianFangShi.Items.AddRange(new object[] {
-            "干法(纸胶条)",
-            "湿法(纸硅胶等)",
+            "干法(指胶条)",
+            "湿法(指硅胶等)",
             "干法+湿法"});
             this.cb_XiangQianFangShi.Location = new System.Drawing.Point(444, 297);
             this.cb_XiangQianFangShi.Name = "cb_XiangQianFangShi";
