@@ -379,6 +379,11 @@ namespace text.doors.Detection
         int index = 0;
         private void tim_Top10_Tick(object sender, EventArgs e)
         {
+
+            index++;
+            if (index < 6)
+                return;
+
             gv_list.Enabled = true;
 
             var cyvalue = _tcpClient.GetCYXS(ref IsSeccess);
@@ -389,8 +394,8 @@ namespace text.doors.Detection
                 return;
             }
 
-            index++;
-            if (index > 8)
+         
+            if (index >= 11)
             {
                 //标记计时结束
                 if (kpa_Level == PublicEnum.Kpa_Level.liter100)
