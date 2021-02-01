@@ -1,0 +1,19 @@
+1.缺少	dt_Settings
+	GanJianChangDu
+	KangFengYaDengJiSheJiZhi
+	KangFengYaSheJiZhi
+	DanShanDanSuoDian
+2.dt_info 并且初始化
+	Watertight
+	WindPressure
+	Airtight
+
+	update dt_info set Watertight = 1,
+	WindPressure = 1,
+	Airtight = 1
+
+3.dt_sm_Info 
+	数据初始化
+	Method
+update dt_sm_info set Method ='稳定加压'
+	

@@ -76,7 +76,6 @@ namespace text.doors.dal
             sb.AppendFormat("delete from dt_Info where dt_Code ='{0}';", code);
             sb.AppendFormat("delete from dt_qm_Info where dt_Code ='{0}';", code);
             sb.AppendFormat("delete from dt_sm_Info where dt_Code ='{0}';", code);
-            sb.AppendFormat("delete from dt_kfy_Info where dt_Code ='{0}';", code);
             return SQLiteHelper.ExecuteNonQuery(sb.ToString()) > 0 ? true : false;
         }
     }
